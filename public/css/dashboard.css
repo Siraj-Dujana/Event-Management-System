@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Dashboard */
+.dashboard-container {
+  width: 40rem;
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem;
+  margin-left: 16rem;
+}
+
+.title {
+  font-size: 36px;
+  color: #800000;
+  margin-bottom: 8rem;
+}
+
+.events {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 5rem;
+}
+
+.event-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.event-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.event-link {
+  font-size: 16px;
+  color: green;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn {
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  margin-left: 8px;
+}
+
+.btn:hover {
+  background-color: #660000;
+}
+
+.button-container a{
+  color: white;
+  text-decoration: none;
+}
+
+.logout{
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px 20px 0 0;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+
+.logout:hover{
+
+  background-color: rgb(205, 0, 0);
+  transform: scale(1.1);
+}

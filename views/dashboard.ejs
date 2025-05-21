@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon Events Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include("partials/sidebar") %>
+
+    <a href="/logout" class="logout">Logout</a>
+
+    <div class="dashboard-container">
+      <h1 class="title">Horizon Events Dashboard</h1>
+
+      <div class="events">
+        <div class="event-card pending-events">
+          <h3>Pending Events</h3>
+          <p><%= upcoming_events %></p>
+        </div>
+        <div class="event-card total-events">
+          <h3>Total Events</h3>
+          <p><%= past_events %></p>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <% if (session && session.role === "admin") { %>
+          <button class="btn"><a href="/events/new">Create New Event</a></button>
+          <button class="btn"><a href="/events/saved">View Saved Events</a></button>
+        <% } %>
+      </div>
+      
+    </div>
+  </body>
+</html>

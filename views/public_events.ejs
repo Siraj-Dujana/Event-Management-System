@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Upcoming Events</title>
+    <link rel="stylesheet" href="/css/public_events.css" />
+  </head>
+  <body>
+    <h1 class="main-heading">Upcomming Events</h1>
+    <a href="/past-events" class="past-event">Check Past Events</a>
+
+    <% events.forEach(event => { %>
+    <br />
+    <div class="container " id="past-events">
+      <h2><%= event.title %></h2>
+      <p class="event-date">
+        <%= new Date(event.event_date).toLocaleDateString("en-GB") %>
+      </p>
+      <p class="event-time">
+        <%= event.opening_time %> - <%= event.closing_time %>
+      </p>
+
+      <div id="countdown-<%= event.id %>" class="countdown">
+        <br />
+        <span id="days-<%= event.id %>"></span>
+        <span id="hours-<%= event.id %>"></span>
+        <span id="minutes-<%= event.id %>"></span>
+        <span id="seconds-<%= event.id %>"></span>
+      </div>
+
+      <p id="event-ended-<%= event.id %>" class="hidden">Event Ended</p>
+
+      <div class="button-group">
+        <a href="<%= event.website_url %>" class="btn website">
+          <%= event.website_url ? event.website_url : "N/A" %>
+        </a>
+        <a href="<%= event.facebook_url %>" class="btn facebook">
+          <%= event.facebook_url ? event.facebook_url : "N/A" %>
+        </a>
+      </div>
+    </div>
+  
+    <script>
+      function startCountdown(eventId, eventDate, eventTime) {
+        const countdownElement = document.getElementById(
+          "countdown-" + eventId
+        );
+        const daysElement = document.getElementById("days-" + eventId);
+        const hoursElement = document.getElementById("hours-" + eventId);
+        const minutesElement = document.getElementById("minutes-" + eventId);
+        const secondsElement = document.getElementById("seconds-" + eventId);
+        const endedElement = document.getElementById("event-ended-" + eventId);
+        const eventCard = document.getElementById("event-card-" + eventId);
+        const pastEventsContainer = document.getElementById("past-events"); // Section for past events
+
+        // Convert "DD/MM/YYYY HH:MM:SS" to "YYYY-MM-DDTHH:MM:SS"
+        let parts = eventDate.split("/");
+        let formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}T${eventTime}`;
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const eventTimeMs = new Date(formattedDate).getTime();
+          const timeRemaining = eventTimeMs - now;
+
+          if (timeRemaining <= 0) {
+            countdownElement.style.display = "none";
+            endedElement.style.display = "block";
+
+            // Move the event to past events section
+            if (eventCard && pastEventsContainer) {
+              pastEventsContainer.appendChild(eventCard);
+            }
+            return;
+          }
+
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          daysElement.innerHTML = days + "D ";
+          hoursElement.innerHTML = hours + "H ";
+          minutesElement.innerHTML = minutes + "M ";
+          secondsElement.innerHTML = seconds + "S ";
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      startCountdown(
+        "<%= event.id %>",
+        "<%= new Date(event.event_date).toLocaleDateString('en-GB') %>",
+        "<%= event.closing_time %>"
+      );
+    </script>
+    <% }) %>
+    
+    <div class="fixed-event-card">
+      <h3>🎉 New Event</h3>
+      <p>Don't miss out!</p>
+      <a href="/scottish-event" class="event-btn">View</a>
+    </div>
+  
+
+  </body>
+</html>

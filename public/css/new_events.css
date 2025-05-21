@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.event-container {
+    background: #fff;
+    width: 520px;
+    padding: 30px 100px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #800000;
+    text-align: center;
+    margin-left: 14rem;
+}
+
+/* Title */
+.event-title {
+    font-size: 30px;
+    color: #800000;
+    margin: -5px 0 40px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+/* Input Fields - Compact & No Extra Space */
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #800000;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 6px; /* Reduced extra space */
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+
+/* Time Fields - Side by Side */
+.time-fields {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.time-input {
+    width: 48%;
+}
+
+/* Button */
+.save-event-btn {
+    background: #800000;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 30px 0 0;
+}
+
+.save-event-btn:hover {
+    background: #5a0000;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .event-container {
+        width: 95%;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Ended Events</title>
+    <link rel="stylesheet" href="/css/public_events.css"/>
+</head>
+<body>
+    <h1 class="main-heading">All Ended Events</h1>
+    <a href="/events" class="past-event">Check Upcoming Events</a>
+    
+    <% events.forEach(event => { %>
+    <br>
+    <div class="container">
+        <h2><%= event.title %></h1>
+        <p class="event-date"><%= new Date(event.event_date).toLocaleDateString("en-GB") %></p>
+        <p class="event-time"><%= event.opening_time %> - <%= event.closing_time %></p>
+
+        <div id="countdown" class="countdown">
+            <br>
+            <span id="days"></span>Event Ended
+        </div>
+
+        <p id="event-ended" class="hidden">Event Ended</p>
+
+        <div class="button-group">
+            <a href="<%= event.website_url %>" class="btn website">
+                <% if (event.website_url) { %>
+                    <%= event.website_url %>
+                <% } else { %>
+                    <%= "N/A" %>
+                <% } %>
+            </a>
+            <a href="<%= event.facebook_url %>" class="btn facebook">
+                <% if (event.facebook_url) { %>
+                    <%= event.facebook_url %>
+                <% } else { %>
+                    <%= "N/A" %>
+                <% } %>
+            </a>
+        </div>
+    </div>
+    <% }) %>
+</body>
+</html>

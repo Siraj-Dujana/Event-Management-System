@@ -1,0 +1,466 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px 20px 10px;
+}
+
+.settings-container {
+    max-width: 800px;
+    margin: 0 0 0 19rem;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background: #555;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.setting-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+}
+.upper .setting-group {
+    width: 18rem;
+}
+
+.setting-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.input-row label {
+    width: 150px;
+}
+
+.input-row input, .input-row select {
+    padding: 5px;
+    width: 100px;
+}
+
+.time-settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time-group {
+    width: 48%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.save-btn, .reset-btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.save-btn {
+    background: #8B0000;
+    color: white;
+}
+
+.reset-btn {
+    background: #A52A2A;
+    color: white;
+}
+
+.upper{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+/* Second Page */
+.countdown h2 {
+    color: #333;
+    text-align: left;
+    font-size: 18px;
+}
+
+.countdown .sub-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.settings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.settings-group {
+    background: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1 1 calc(25% - 20px);
+    width: 10px;
+    text-align: left;
+}
+
+.settings-group h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.settings-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.settings-group input,
+.settings-group select {
+    width: 30%;
+    /* padding: 5px; */
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.settings-group input[type="color"] {
+    padding: 4.4px;
+}
+.countain-buttons{
+    margin-top: 18px;
+    margin-bottom: -20px;
+}
+
+.countain-buttons .restore-btn {
+    background: darkred;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* 3rd */
+.msg-sec{
+    display: flex;
+}
+
+.third-msg-section{
+    justify-self: column;
+}
+
+.message-settings h3 {
+    margin-bottom: 5px;
+}
+
+.message-section {
+    /* width: 22rem; */
+    background: #f9f9f9;
+    padding: 6px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 5px solid #bbb;
+    margin: 0 20px 5px 0;
+}
+
+.message-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group span {
+    min-width: 150px;
+}
+
+input[type="number"], select, input[type="color"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: -15px;
+}
+
+.save {
+    background: brown;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restore {
+    background: darkred;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* 4th */
+.stylish-border {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stylish-border h2 {
+    margin-bottom: 10px;
+}
+
+.stylish-border .tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+
+.stylish-border .tabs .tab {
+    background: #e0e0e0;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.stylish-border .tabs .tab.active {
+    background: #ddd;
+    font-weight: bold;
+}
+
+.stylish-border .settings-section {
+    margin-top: 20px;
+}
+
+.stylish-border .settings-section h3 {
+    margin-bottom: 5px;
+}
+
+.stylish-border .settings-section p {
+    font-size: 14px;
+    color: #666;
+}
+
+.stylish-border .settings-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.stylish-border .settings-section .border-color {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60px;
+}
+
+.stylish-border .settings-section .border-thickness {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60px;
+}
+
+.stylish-border .settings-section .radius-inputs {
+    display: flex;
+    gap: 5px;
+}
+
+.stylish-border .settings-section .radius-inputs input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30px;
+}
+.radius-inputs input{
+    width: 80px; 
+    margin-left: 10px;
+}
+.stylish-border .settings-section .buttons {
+    margin-top: 15px;
+}
+
+.stylish-border .settings-section .buttons .save-btn {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.stylish-border .settings-section .buttons .save-btn:hover {
+    background-color: #a30000;
+}
+
+.stylish-border .settings-section .buttons .restore-btn {
+    background-color: #7a0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stylish-border .settings-section .buttons .restore-btn:hover {
+    background-color: #9a0000;
+}
+
+
+
+
+
+/* 5th */
+.stylish-page {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.stylish-page .container {
+    /* padding: 20px; */
+    border-radius: 8px;
+}
+
+.stylish-page h2, .stylish-page h3 {
+    margin-bottom: 10px;
+}
+
+.stylish-page label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.stylish-page input, .stylish-page select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.stylish-page .color-box {
+    display: flex;
+    align-items: center;
+}
+
+.stylish-page .color-box input {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.stylish-page .border-radius-box {
+    display: flex;
+    gap: 10px;
+}
+
+.stylish-page .border-radius-box input {
+    width: 50px;
+    text-align: center;
+}
+
+.stylish-page .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stylish-page .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: #800000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.stylish-page .btn:hover {
+    background-color: #600000;
+}
+
+.stylish-page .restore {
+    background-color: #5a0000;
+}
+
+.stylish-page .restore:hover {
+    background-color: #400000;
+}

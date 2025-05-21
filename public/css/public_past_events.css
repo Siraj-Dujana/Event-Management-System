@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.past-event{
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px 20px 0 0;
+    background-color: rgb(68, 112, 3);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.main-heading{
+    margin: 1rem 0;
+}
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.event-date, .event-time {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4444;
+    margin-bottom: 15px;
+}
+
+#event-ended {
+    font-size: 18px;
+    color: #b71c1c;
+    font-weight: bold;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-group {
+    margin-top: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    display: inline-block;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn.website {
+    background: #d32f2f;
+}
+
+.btn.facebook {
+    background: #d32f2f;
+}
+
+.btn:hover {
+    background: #b71c1c;
+}

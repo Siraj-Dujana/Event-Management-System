@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/css/settings.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <%- include("partials/sidebar") %>
+
+    <!-- Show All Saved Events -->
+    <div class="settings-container">
+      <h2>Settings</h2>
+
+      <!-- Tab Menu -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'Basic')">
+          Basic
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'Countdown')">
+          Countdown
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'Messages')">
+          Messages
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'StylishBorder')">
+          Stylish Border
+        </button>
+        <!-- <button class="tab-btn" onclick="openTab(event, 'StylishButton')">
+          Stylish Button
+        </button> -->
+      </div>
+
+      <!-- Tab Content -->
+      <div id="Basic" class="tab-content active">
+        <h3>Basic Settings</h3>
+
+        <form action="/save-settings" method="POST">
+          <div class="upper">
+            <div class="setting-group">
+              <label>Event Name</label>
+              <div class="input-row">
+                <label>Font Size (px):</label>
+                <input type="number" name="eventNameSize" value="40" />
+              </div>
+              <div class="input-row">
+                <label>Text Decoration:</label>
+                <select name="eventNameDecoration">
+                  <option>None</option>
+                  <option>Bold</option>
+                  <option>Italic</option>
+                  <option>Underline</option>
+                </select>
+              </div>
+              <div class="input-row">
+                <label>Color:</label>
+                <input type="color" name="eventNameColor" value="#8B4513" />
+              </div>
+            </div>
+
+            <div class="setting-group">
+              <label>Event Date</label>
+              <div class="input-row">
+                <label>Font Size (px):</label>
+                <input type="number" name="eventDateSize" value="20" />
+              </div>
+              <div class="input-row">
+                <label>Text Decoration:</label>
+                <select name="eventDateDecoration">
+                  <option>None</option>
+                  <option>Bold</option>
+                  <option>Italic</option>
+                  <option>Underline</option>
+                </select>
+              </div>
+              <div class="input-row">
+                <label>Color:</label>
+                <input type="color" name="eventDateColor" value="#D2691E" />
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label>Times</label>
+            <div class="time-settings">
+              <div class="time-group">
+                <label>Opening</label>
+                <div class="input-row">
+                  <label>Font Size (px):</label>
+                  <input type="number" name="openingSize" value="20" />
+                </div>
+                <div class="input-row">
+                  <label>Text Decoration:</label>
+                  <select name="openingDecoration">
+                    <option>None</option>
+                    <option>Bold</option>
+                    <option>Italic</option>
+                    <option>Underline</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label>Color:</label>
+                  <input type="color" name="openingColor" value="#008000" />
+                </div>
+              </div>
+
+              <div class="time-group">
+                <label>Closing</label>
+                <div class="input-row">
+                  <label>Font Size (px):</label>
+                  <input type="number" name="closingSize" value="20" />
+                </div>
+                <div class="input-row">
+                  <label>Text Decoration:</label>
+                  <select name="closingDecoration">
+                    <option>None</option>
+                    <option>Bold</option>
+                    <option>Italic</option>
+                    <option>Underline</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label>Color:</label>
+                  <input type="color" name="closingColor" value="#FF0000" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="save-btn">Save Settings</button>
+            <button type="reset" class="reset-btn">Restore Defaults</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 2nd Countdown Page -->
+      <div id="Countdown" class="tab-content countdown">
+        <h2>Countdown Timer Settings</h2>
+        <p class="sub-text">
+          Customize the countdown timer appearance, including font sizes,
+          colors, and decorations for numbers and letters.
+        </p>
+
+        <div class="settings-grid">
+          <div class="settings-group">
+            <h3>Counting the Days</h3>
+            <label>Days</label>
+            <input type="number" value="28" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#800000" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Letter "D"</h3>
+            <label>Font Size (px)</label>
+            <input type="number" value="18" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#FFA500" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Counting the Hours</h3>
+            <label>Hours</label>
+            <input type="number" value="28" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#A52A2A" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Letter "h"</h3>
+            <label>Font Size (px)</label>
+            <input type="number" value="18" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#D2691E" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Counting the Minutes</h3>
+            <label>Minutes</label>
+            <input type="number" value="28" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#D2691E" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Letter "h"</h3>
+            <label>Font Size (px)</label>
+            <input type="number" value="18" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#800000" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Counting the Seconds</h3>
+            <label>Seconds</label>
+            <input type="number" value="28" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#FFA500" />
+          </div>
+
+          <div class="settings-group">
+            <h3>Letter "S"</h3>
+            <label>Font Size (px)</label>
+            <input type="number" value="18" />
+            <select>
+              <option>None</option>
+            </select>
+            <input type="color" value="#800000" />
+          </div>
+        </div>
+        <div class="countain-buttons">
+          <button class="save-btn">Save Settings</button>
+          <button class="restore-btn">Restore Defaults</button>
+        </div>
+      </div>
+
+      <!-- 2nd Countdown Page -->
+      <div id="Messages" class="tab-content">
+        <div class="messages-container">
+          <div class="message-settings">
+            <h3>Countdown Messages</h3>
+            <p>
+              Set the colors, font sizes, and text decorations for countdown
+              messages.
+            </p>
+
+            <div class="msg-sec">
+              <div class="message-section">
+                <label>Message "Opening Soon"</label>
+                <div class="input-group">
+                  <span>Font Size (px):</span>
+                  <input type="number" value="25" />
+                </div>
+                <div class="input-group">
+                  <span>Text Decoration:</span>
+                  <select>
+                    <option>None</option>
+                    <option>Bold</option>
+                    <option>Italic</option>
+                    <option>Underline</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <span>Color:</span>
+                  <input type="color" value="#008000" />
+                </div>
+              </div>
+
+              <div class="message-section">
+                <label>Message "Ongoing"</label>
+                <div class="input-group">
+                  <span>Font Size (px):</span>
+                  <input type="number" value="25" />
+                </div>
+                <div class="input-group">
+                  <span>Text Decoration:</span>
+                  <select>
+                    <option>None</option>
+                    <option>Bold</option>
+                    <option>Italic</option>
+                    <option>Underline</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <span>Color:</span>
+                  <input type="color" value="#FFA500" />
+                </div>
+              </div>
+            </div>
+
+            <div class="message-section">
+              <label>Message "Ended"</label>
+              <div class="input-group">
+                <span>Font Size (px):</span>
+                <input type="number" value="25" />
+              </div>
+              <div class="input-group">
+                <span>Text Decoration:</span>
+                <select>
+                  <option>None</option>
+                  <option>Bold</option>
+                  <option>Italic</option>
+                  <option>Underline</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <span>Color:</span>
+                <input type="color" value="#FF0000" />
+              </div>
+            </div>
+
+            <div class="buttons">
+              <button class="save">Save Settings</button>
+              <button class="restore">Restore Defaults</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4th -->
+      <div id="StylishBorder" class="tab-content stylish-border">
+        <h3>Stylish Border Settings</h3>
+        <p>Adjust the appearance of borders for event displays.</p>
+        <br />
+        <label>Border Color</label>
+        <input type="color" class="border-color" value="#8B0000" />
+        <br /><br /><br />
+        <label>Border Thickness (px)</label>
+        <input type="number" class="border-thickness" value="2" />
+        <br /><br /><br />
+        <div class="radius-inputs">
+          <label>Border Radius (TL, TR, BL, BR)</label>
+          <input type="number" value="25" />
+          <input type="number" value="25" />
+          <input type="number" value="25" />
+          <input type="number" value="25" />
+        </div>
+
+        <div class="buttons">
+          <button class="save-btn">Save Settings</button>
+          <button class="restore-btn">Restore Defaults</button>
+        </div>
+      </div>
+
+      <!-- 5th -->
+      <!-- <div id="StylishButton" class="tab-content active stylish-page">
+        <div class="container">
+          <h2>Stylish Button Settings</h2>
+      
+          <label>Font Size (px):</label>
+          <input type="number" value="16">
+      
+          <label>Text Decoration:</label>
+          <select>
+              <option>None</option>
+              <option>Underline</option>
+              <option>Italic</option>
+          </select>
+      
+          <label>Background Color:</label>
+          <div class="color-box">
+              <input type="color" value="#800000">
+          </div>
+      
+          <label>Text Color:</label>
+          <div class="color-box">
+              <input type="color" value="#ffffff">
+          </div>
+      
+          <h3>Button Border</h3>
+      
+          <label>Border Thickness (px):</label>
+          <input type="number" value="2">
+      
+          <label>Border Color:</label>
+          <div class="color-box">
+              <input type="color" value="#E4A469">
+          </div>
+      
+          <label>Border Radius (TL, TR, BL, BR):</label>
+          <div class="border-radius-box">
+              <input type="number" value="25">
+              <input type="number" value="25">
+              <input type="number" value="25">
+              <input type="number" value="25">
+          </div>
+      
+          <h3>Button Hover Appearance</h3>
+      
+          <label>Font Size (px):</label>
+          <input type="number" value="16">
+      
+          <label>Text Decoration:</label>
+          <select>
+              <option>None</option>
+              <option>Underline</option>
+              <option>Italic</option>
+          </select>
+      
+          <label>Background Color:</label>
+          <div class="color-box">
+              <input type="color" value="#E4A469">
+          </div>
+      
+          <label>Text Color:</label>
+          <div class="color-box">
+              <input type="color" value="#800000">
+          </div>
+      
+          <h3>Button Hover Border</h3>
+      
+          <label>Border Thickness (px):</label>
+          <input type="number" value="2">
+      
+          <label>Border Color:</label>
+          <div class="color-box">
+              <input type="color" value="#800000">
+          </div>
+      
+          <label>Border Radius (TL, TR, BL, BR):</label>
+          <div class="border-radius-box">
+              <input type="number" value="25">
+              <input type="number" value="25">
+              <input type="number" value="25">
+              <input type="number" value="25">
+          </div>
+      
+          <div class="buttons">
+              <button class="btn">Save Settings</button>
+              <button class="btn restore">Restore Defaults</button>
+          </div>
+      </div>
+        
+      </div> -->
+    </div>
+
+    <script>
+      function openTab(evt, tabName) {
+        let i, tabContent, tabBtns;
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+          tabContent[i].style.display = "none";
+        }
+        tabBtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtns.length; i++) {
+          tabBtns[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

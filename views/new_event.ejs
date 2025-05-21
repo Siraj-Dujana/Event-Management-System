@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios_new"
+    />
+
+    <title>Create A New Account</title>
+    <link rel="stylesheet" href="/css/new_events.css" />
+  </head>
+  <body>
+    <%- include("partials/sidebar") %>
+
+    <div class="event-container">
+      <h2 class="event-title">Create an Event</h2>
+
+      <form action="/events/create" method="post">
+        <label for="event-title">Event Title</label>
+        <input
+          type="text"
+          id="event-title"
+          name="eventTitle"
+          placeholder="Enter event title"
+          required
+        />
+
+        <label for="event-date">Event Date</label>
+        <input type="date" id="event-date" name="eventDate" required />
+
+        <div class="time-fields">
+          <div class="time-input">
+            <label for="opening-time">Opening Time</label>
+            <input type="time" id="opening-time" name="openingTime" required />
+          </div>
+          <div class="time-input">
+            <label for="closing-time">Closing Time</label>
+            <input type="time" id="closing-time" name="closingTime" required />
+          </div>
+        </div>
+
+        <label for="website-url">Website URL</label>
+        <input
+          type="text"
+          id="website-url"
+          name="websiteUrl"
+          placeholder="http://"
+        />
+
+        <label for="facebook-url">Facebook URL</label>
+        <input
+          type="text"
+          id="facebook-url"
+          name="facebookUrl"
+          placeholder="http://"
+        />
+
+        <button type="submit" class="save-event-btn">Save Event</button>
+      </form>
+    </div>
+  </body>
+</html>
